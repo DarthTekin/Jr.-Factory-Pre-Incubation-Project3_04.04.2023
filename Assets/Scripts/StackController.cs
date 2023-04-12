@@ -22,9 +22,8 @@ public class StackController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+  public void StackCup(GameObject other, int index)
     {
-        
+
     }
 }
