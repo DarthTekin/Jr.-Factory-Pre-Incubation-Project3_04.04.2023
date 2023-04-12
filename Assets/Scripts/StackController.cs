@@ -8,6 +8,7 @@ public class StackController : MonoBehaviour
     public static StackController instance;
 
     public float movementDelay = 0.25f;
+    public float originDelay = 0.7f;
 
     public List<GameObject> cups = new List<GameObject>();
 
@@ -54,6 +55,16 @@ public class StackController : MonoBehaviour
             Vector3 pos = cups[i].transform.localPosition;
             pos.x = cups[i - 1].transform.localPosition.x;
             cups[i].transform.DOLocalMove(pos, movementDelay);
+        }
+    }
+
+    private void MoveOrigin()
+    {
+        for (int i = 1; i < cups.Count; i++)
+        {
+            Vector3 pos = cups[i].transform.localPosition;
+            pos.x = cups[0].transform.localPosition.x;
+            cups[i].transform.DOLocalMove(pos, originDelay);
         }
     }
 }
