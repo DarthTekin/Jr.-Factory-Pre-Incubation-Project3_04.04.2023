@@ -21,9 +21,17 @@ public class StackController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void Start()
+    private void Update()
     {
-        
+        if (Input.GetButton("Fire1"))
+        {
+            MoveListElements();
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            MoveOrigin();
+        }
     }
 
   public void StackCup(GameObject other, int index)
