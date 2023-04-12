@@ -7,6 +7,8 @@ public class StackController : MonoBehaviour
 {
     public static StackController instance;
 
+    public float movementDelay = 0.25f;
+
     public List<GameObject> cups = new List<GameObject>();
 
     private void Awake()
@@ -42,6 +44,16 @@ public class StackController : MonoBehaviour
             cups[i].transform.DOScale(scale, 0.1f).OnComplete(() => cups[i].transform.DOScale(new Vector3(1, 1, 1), 0.1f));
             
             yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    private void MoveListElements()
+    {
+        for (int i = 1; i < cups.Count; i++)
+        {
+            Vector3 pos = cups[i].transform.localPosition;
+            pos.x = cups[i - 1].transform.localPosition.x;
+            cups[i].transform.DOLocalMove(pos, movementDelay);
         }
     }
 }
