@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
+        if (other.gameObject.tag == "Cup")
+        {
+            if (!StackController.instance.cups.Contains(other.gameObject))
+            {
+                other.GetComponent<BoxCollider>().isTrigger = false;
+                other.gameObject.tag = "Untagged";
+                other.gameObject.AddComponent<Collision>();
+                other.gameObject.AddComponent<Rigidbody>();
+                other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+                StackController.instance.StackCup(other.gameObject, StackController.instance.cups.Count - 1);
+            }
+        }
+
     }
 }

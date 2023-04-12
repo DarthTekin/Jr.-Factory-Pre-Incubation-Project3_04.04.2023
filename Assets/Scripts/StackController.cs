@@ -32,7 +32,7 @@ public class StackController : MonoBehaviour
         StartCoroutine(MakeBigger());
     }
 
-    public IEnumerator MakeBigger()
+    private IEnumerator MakeBigger()
     {
         for (int i = cups.Count; i > 0; i--)
         {
