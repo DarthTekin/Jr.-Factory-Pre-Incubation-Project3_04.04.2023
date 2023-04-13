@@ -40,17 +40,19 @@ public class StackController : MonoBehaviour
         Vector3 newPos = cups[index].transform.localPosition;
         newPos.z += 1;
         other.transform.localPosition = newPos;
+        cups.Add(other);
         StartCoroutine(MakeBigger());
     }
 
     private IEnumerator MakeBigger()
     {
-        for (int i = cups.Count; i > 0; i--)
+        for (int i = cups.Count - 1; i > 0; i--)
         {
+            int index = i;
             Vector3 scale = new Vector3(1, 1, 1);
-            scale *= 1.25f;
+            scale *= 1.5f;
 
-            cups[i].transform.DOScale(scale, 0.1f).OnComplete(() => cups[i].transform.DOScale(new Vector3(1, 1, 1), 0.1f));
+            cups[index].transform.DOScale(scale, 0.1f).OnComplete(() => cups[index].transform.DOScale(new Vector3(1, 1, 1), 0.1f));
             
             yield return new WaitForSeconds(0.05f);
         }

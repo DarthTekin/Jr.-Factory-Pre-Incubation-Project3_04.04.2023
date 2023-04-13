@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6748879206172180785}
   - component: {fileID: 6748879206172180940}
   - component: {fileID: 6748879206172180787}
-  - component: {fileID: -8240974718268950058}
+  - component: {fileID: -3281482171329184739}
   m_Layer: 0
-  m_Name: ChildCup
+  m_Name: ChildCup 3
   m_TagString: Cup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,6 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 9b7a5cbf4123dfb4fb56d205ff3b3af8, type: 2}
   - {fileID: 2100000, guid: 79d078fd2fe35d648a85277be62a10f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -84,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-8240974718268950058
+--- !u!65 &-3281482171329184739
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
