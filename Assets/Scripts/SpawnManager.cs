@@ -24,12 +24,6 @@ public class SpawnManager : MonoBehaviour
        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private Vector3 SpawnPosition(float zOffset)
     {
         float randomPosX = Random.Range(-spawnRange, spawnRange);
